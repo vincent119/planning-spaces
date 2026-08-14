@@ -25,7 +25,7 @@
 ## Private Specification Workspace
 
 - Internal requirements, designs, tasks, ADRs, operational documents, and business rules are maintained outside this public repository.
-- Resolve the private workspace from `PRIVATE_SPEC_WORKSPACE`; expected specification layout: `$PRIVATE_SPEC_WORKSPACE/opscenter/.specs/<space>/`.
+- Resolve the private workspace from `PRIVATE_SPEC_WORKSPACE`; expected specification layout: `$PRIVATE_SPEC_WORKSPACE/<repository>/.specs/<space>/`.
 - Do not commit, copy, quote, or expose confidential specification content, operational data, internal identifiers, or business decisions in this public repository.
 - When the private workspace is available, locate and use the owning specification before planning or implementing scoped work.
 - When it is unavailable, state that limitation. Do not claim private specification review, create replacement internal documents here, or infer confidential requirements.
@@ -36,7 +36,7 @@
 - For new features, out-of-scope bug fixes, requirement changes, or user requests to plan/spec first, use the `sdd-skill`.
 - The skill defines the workflow; do not duplicate its full procedure here.
 - Project convention overrides the skill’s default paths and names:
-  - Specification workspace: `$PRIVATE_SPEC_WORKSPACE/opscenter/.specs/`; use an explicitly approved local `.kiro/specs/` exception only when necessary.
+  - Specification workspace: `$PRIVATE_SPEC_WORKSPACE/<repository>/.specs/`; use an explicitly approved local `.kiro/specs/` exception only when necessary.
   - Required files: `requirements.md`, `design.md`, and `task.md`
   - Use the owning existing spec space when available. Create a new space only when the change has no appropriate owner.
 - If the skill and project convention differ, preserve the project workspace and filename convention while following the skill’s requirements, design, task-boundary, and verification principles.
@@ -68,4 +68,4 @@
 
 - Add the project’s specification workspace path and active specification locations here when needed.
 - Keep this index short; it is an entry point, not a full list of project files.
-- Private specification root: `$PRIVATE_SPEC_WORKSPACE/opscenter/.specs/`
+- Private specification root: `$PRIVATE_SPEC_WORKSPACE/<repository>/.specs/`
