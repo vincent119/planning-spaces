@@ -1,6 +1,6 @@
 # 任務文件：CareNest 多位被照顧者
 
-Status: PartiallyComplete
+Status: Complete
 
 ## Execution Context
 
@@ -47,8 +47,8 @@ Status: PartiallyComplete
   - Context: 清單明確標示目前對象；新增開啟既有設定；改名與永久刪除提供繁中錯誤與狀態回饋
   - Verify: Widget 測試覆蓋管理入口、名稱驗證、永久刪除稱呼確認與切換
 
-- [ ] T4：整合驗證與 Android 實機確認
-  - Status: InProgress
+- [x] T4：整合驗證與 Android 實機確認
+  - Status: Complete
   - Boundary:
     - Allowed Changes: 驗證、範圍內修正與任務文件
     - Forbidden: 新功能與範圍外重構
@@ -68,3 +68,4 @@ Status: PartiallyComplete
 
 - 2026-08-19：由草案升格；使用者確認完整刪除規則，包含所有本機資料與餐食照片。
 - 2026-08-19：完成 schema version 4、目前對象保存、多位對象 CRUD、完整刪除與照片檔清理。全套 `flutter test`、`flutter analyze`、`flutter build apk --debug` 與 `git diff --check` 均通過，並已用保留資料方式更新安裝至 Android 裝置，且可正常啟動。尚待使用者以測試對象手動確認新增、切換、改名與完整刪除流程。
+- 2026-08-20：使用者確認 Android 實機已完成新增、切換、改名與完整刪除流程；多位被照顧者規格結案。
