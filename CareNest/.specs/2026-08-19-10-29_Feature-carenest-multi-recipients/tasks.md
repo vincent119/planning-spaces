@@ -1,6 +1,6 @@
 # 任務文件：CareNest 多位被照顧者
 
-Status: InProgress
+Status: PartiallyComplete
 
 ## Execution Context
 
@@ -20,8 +20,8 @@ Status: InProgress
 
 ## 實作任務
 
-- [ ] T1：擴充資料庫為多位對象與目前選取狀態
-  - Status: InProgress
+- [x] T1：擴充資料庫為多位對象與目前選取狀態
+  - Status: Complete
   - Boundary:
     - Allowed Changes: `app_database.dart`、產生檔、資料庫測試
     - Forbidden: 網路相依、既有紀錄資料遷移、刪除 UI
@@ -29,8 +29,8 @@ Status: InProgress
   - Context: schema version 4 新增 active recipient 表，解除單一對象檢查，提供 transaction 刪除與照片路徑清單
   - Verify: 多位建立、資料隔離、升級 migration、完整關聯列刪除測試
 
-- [ ] T2：擴充 Controller 管理對象生命週期
-  - Status: Planned
+- [x] T2：擴充 Controller 管理對象生命週期
+  - Status: Complete
   - Boundary:
     - Allowed Changes: `care_nest_controller.dart`、Controller 測試、必要照片清理呼叫
     - Forbidden: 修改既有照護紀錄輸入規則、跨對象資料複製
@@ -38,8 +38,8 @@ Status: InProgress
   - Context: 初始化讀取 active recipient；切換、新增、改名、刪除後正確重載或進入首次設定
   - Verify: 切換、改名、刪除目前／非目前／最後一位對象的 Controller 測試
 
-- [ ] T3：建立被照顧者管理介面並重用新增設定
-  - Status: Planned
+- [x] T3：建立被照顧者管理介面並重用新增設定
+  - Status: Complete
   - Boundary:
     - Allowed Changes: recipients feature、dashboard 管理入口、onboarding 完成返回行為、Widget 測試
     - Forbidden: 一般首頁資訊架構重設、照護設定欄位編輯、外部導航套件
@@ -48,7 +48,7 @@ Status: InProgress
   - Verify: Widget 測試覆蓋管理入口、名稱驗證、永久刪除稱呼確認與切換
 
 - [ ] T4：整合驗證與 Android 實機確認
-  - Status: Planned
+  - Status: InProgress
   - Boundary:
     - Allowed Changes: 驗證、範圍內修正與任務文件
     - Forbidden: 新功能與範圍外重構
@@ -67,3 +67,4 @@ Status: InProgress
 ## Implementation Notes
 
 - 2026-08-19：由草案升格；使用者確認完整刪除規則，包含所有本機資料與餐食照片。
+- 2026-08-19：完成 schema version 4、目前對象保存、多位對象 CRUD、完整刪除與照片檔清理。全套 `flutter test`、`flutter analyze`、`flutter build apk --debug` 與 `git diff --check` 均通過，並已用保留資料方式更新安裝至 Android 裝置，且可正常啟動。尚待使用者以測試對象手動確認新增、切換、改名與完整刪除流程。
